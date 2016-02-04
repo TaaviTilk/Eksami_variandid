@@ -1,3 +1,5 @@
+package OOP;
+
 import java.util.ArrayList;
 
 /**
@@ -7,7 +9,7 @@ import java.util.ArrayList;
  *
  * Käesolevat klassi ei tohi muuta - mitte ühtegi tähemärki! Arvad, et ei jää vahele? :)
  */
-public class Objektorienteeritus {
+public class Kassa_OOP {
 
     public static void main(String[] args) {
 
@@ -24,11 +26,12 @@ public class Objektorienteeritus {
         kassa.lisaToode("Leib");
 
         System.out.println("Klient ostis järgmised tooted: " + kassa.votaTooted());
+
         System.out.println("Tooteid on kokku: " + kassa.votaToodeteArv());
         System.out.println("Kassapidaja nimi on " + kassa.votaKassapidajaNimi());
 
         kassa.kliendilPoleRaha(); // Mis nüüd saab?
-
+        System.out.println("Klient loobus järgmistest toodetest: " + kassa.votaTooted2());
         System.out.println("Klient ostis järgmised tooted: " + kassa.votaTooted());
         System.out.println("Tooteid on kokku: " + kassa.votaToodeteArv());
     }
