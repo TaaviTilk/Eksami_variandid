@@ -22,6 +22,7 @@ public class Raamatukogu {
         raamat.sisestaSona("sarkasm");
         raamat.sisestaSona("iroonia");
 
+        System.out.println("Mis raamatud kaes on: " + raamat.misRaamatOn());
         String[] vaste = raamat.otsiEsimeseTaheJargi("u");
         System.out.println(Arrays.toString(vaste));
 
@@ -37,38 +38,61 @@ public class Raamatukogu {
     private static class Sonaraamat {
 
         private ArrayList <String> raamat1 = new ArrayList<>();
+        private ArrayList <String> raamat2 = new ArrayList<>();
         private String keel;
 
         public Sonaraamat(String raamatuKeel) {
             String keel = raamatuKeel;
+            System.out.println(keel);
         }
 
         public void sisestaSona(String sona) {
             raamat1.add(sona);
+           // System.out.println(raamat1.add(sona));
         }
 
-//        public String[] otsiEsimeseTaheJargi(String u) {
-//            if ((new String(u).contains(u))) {
-//                // do something
-//            }
-//            return String;
-//        }
 
         public void eemaldaSona(String s) {
-            raamat1.remove(s);
+            raamat2.remove(s);
+
 
         }
 
         public String misKeelesRaamatOn() {
+            System.out.println(Sonaraamat.this);
+            System.out.println("ssss");
+            System.out.println(keel);
             return keel;
         }
 
         public String[] otsiEsimeseTaheJargi(String u) {
 
-            //Arrays.
-            //raamat1.sort(u);
-            raamat1.contains(u);
-            return new String[0];
+            char taht = u.charAt(0);
+            //System.out.println(taht);
+            //int count = 0;
+            for (int i = 0; i <raamat1.size() ; i++) {
+                if (raamat1.get(i).charAt(0)== taht){
+                    raamat2.add(raamat1.get(i));
+                    //System.out.println("-"+raamat2.add(raamat1.get(i)));
+                    //count++;
+                }
+            }
+
+            //System.out.println("to string"+raamat2.toString());
+
+            String [] tulemus = new String[raamat2.size()];
+            for (int i = 0; i <raamat2.size() ; i++) {
+                tulemus [i]= raamat2.get(i);
+
+            }
+            raamat2.clear();
+            return tulemus;
+
+        }
+        public String misRaamatOn() {
+
+            return raamat1.toString();
+
         }
     }
 }

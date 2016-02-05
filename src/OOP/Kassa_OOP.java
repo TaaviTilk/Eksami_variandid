@@ -35,4 +35,46 @@ public class Kassa_OOP {
         System.out.println("Klient ostis järgmised tooted: " + kassa.votaTooted());
         System.out.println("Tooteid on kokku: " + kassa.votaToodeteArv());
     }
+
+    public static class Kassa {
+
+        private String kassapidajaNimi;
+        private ArrayList<String> tooted = new ArrayList<>();
+        private ArrayList<String> tooted2 = new ArrayList<>();
+
+        Kassa(String kassapidaja) {
+            kassapidajaNimi = kassapidaja;
+        }
+
+        public void lisaToode(String toode) {
+            tooted.add(toode);
+        }
+
+        public String votaTooted() {
+            return tooted.toString();
+        }
+
+        public int votaToodeteArv() {
+            return tooted.size();
+        }
+
+        public String votaKassapidajaNimi() {
+            return kassapidajaNimi;
+        }
+
+        public void eemaldaToode(String toode) {
+            tooted2.add(toode);
+        }
+        public String votaTooted2() {
+            return tooted2.toString();
+        }
+        public void kliendilPoleRaha() {
+            System.out.println("Kliendil ei ole niipalju raha");
+            tooted.removeAll(tooted2);
+
+
+        }
+
+
+    }
 }
